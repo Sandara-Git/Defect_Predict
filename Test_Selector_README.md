@@ -12,6 +12,7 @@ There is a need for a smart test selection mechanism that can efficiently choose
 without compromising on the overall test coverage.
 
 ## Strategy for Smart Test Selection:
+
 ### Code Change Analysis:
 Monitor the version control system for incoming code changes.
 Identify the files or modules affected by the changes.
