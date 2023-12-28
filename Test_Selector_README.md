@@ -12,7 +12,8 @@ There is a need for a smart test selection mechanism that can efficiently choose
 without compromising on the overall test coverage.
 
 ## Strategy for Smart Test Selection:
-![Block_Diagram](https://github.com/Sandara-Git/Defect_Predict/assets/140485221/d271ed12-edb2-4f64-b2e1-7c4ce7993221)
+![Test_Selectors](https://github.com/Sandara-Git/Defect_Predict/assets/140485221/310e357b-1c2e-4908-81fb-091f2eb2547e)
+
 
 
 ### Relevant Data:
