@@ -21,6 +21,7 @@ A classification algorithm, such as SVM or Random Forest, could use these numeri
 
 
 As for both algorithms working together, you could use the NLP model to generate numerical features from code text and test cases, and then use these features as input to a classification algorithm, such as SVM or Random Forest. 
+For the model, machine learning algorithms such as Random Forest, SVM, or even a Neural Network are recommended.
 
 ## Process of Defect_Predict
 ![Smart_test_selector drawio](https://github.com/Sandara-Git/Defect_Predict/assets/140485221/db004b8c-2b94-41b1-be07-eabbeb88e257)
