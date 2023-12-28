@@ -9,21 +9,18 @@ Assume that the chosen features are sufficient for defect prediction.
 
 In this experiment, I have used open source publicly available data from PROMISE Software Engineering Database
 
-### Why Machine Learning
+### Why Machine Learning or NLP
 
-Early Detection: Machine learning models can analyze patterns and historical data to identify potential defects in the early stages of the software development lifecycle.
+There are several theoretical approaches to address this problem. One of these might be to use a supervised machine learning model to classify test cases based on their relationship to a specific code change. This would involve training the model with a labeled dataset containing pairs of code changes and test cases, along with the relationship label.
 
-Cost Savings: Identifying and fixing defects early is generally less expensive than addressing them in later stages or after the software is released. 
+#### NLP model
+An NLP model could be useful for processing code text and test case names and generating numerical features that represent the text content. These numerical features could include, for example, the frequency of certain words or phrases, or the semantic similarity between the code and the test cases.
 
-Enhanced Product Quality: By predicting and preventing defects, machine learning helps improve the overall quality of the software product. 
+#### Classification Algorithm
+A classification algorithm, such as SVM or Random Forest, could use these numerical features to associate code changes with the most relevant test cases. It is important to note that these algorithms require a labeled dataset in order to train the model.
 
-Resource Optimization: Machine learning models can analyze large datasets to prioritize testing efforts.
 
-Continuous Improvement: Machine learning models can adapt and learn from new data over time.
-
-Risk Mitigation: Identifying potential defects allows project managers to assess and mitigate risks associated with software development.
-
-Efficiency Gains: Automation of defect prediction processes through machine learning contributes to increased efficiency in the development workflow. 
+As for both algorithms working together, you could use the NLP model to generate numerical features from code text and test cases, and then use these features as input to a classification algorithm, such as SVM or Random Forest. 
 
 ## Process of Defect_Predict
 ![Smart_test_selector drawio](https://github.com/Sandara-Git/Defect_Predict/assets/140485221/db004b8c-2b94-41b1-be07-eabbeb88e257)
