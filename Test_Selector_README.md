@@ -54,7 +54,22 @@ Once relevance scores are assigned to each test case using one or a combination 
 ### Accessing test case repository
 To access existing test cases written in Gherkin, the model could use a file read interface. This interface could be developed to allow the model to access and read the Gherkin files in the test case repository.
 
-The interface could be developed using a programming language such as Python and could be integrated with the language model via an API. The interface could take as input the path of the Gherkin file and return the c
+The interface could be developed using a programming language such as Python and could be integrated with the language model via an API. The interface could take as input the path of the Gherkin file.
+
+### Ability to process user’s feedback to improve the algorithm 
+
+Add a new class called "Feedback" that stores information about whether a test case selected by the model is correct or not. This class could have attributes such as the ID of the test case, the ID of the user who provided the feedback, and a boolean flag indicating whether the selected test case is correct or not.
+
+Add a new function in the "MLModel" class called "processFeedback(feedback: Feedback)" that processes the feedback provided by the user. This function could update a counter internal to the model that keeps track of how many users have provided feedback for a specific test case and how many of them have rated it correct.
+
+Modify the "predictRelatedTestCases(codeChange: ChangeInCode)" function to take user feedback into account when selecting test cases related to a specific change. For example, the model could give more weight to test cases that have been rated correct by a larger number of users.
+
+Provide an interface for users to provide feedback, either through a web page or mobile app, where users can select a test case and provide feedback on whether or not that test case is correct.
+Create a table in the database to store the feedback.
+
+### Ability to suggest/create new test cases not included in the repository
+The above approach could generate or suggest new scenarios that are not covered in the test case repository. 
+This is because the model is capable of autonomous text generation, which means that it can generate new ideas and scenarios that are not present in the training dataset. However, it is important to note that the quality and relevance of these new scenarios will depend on the quality and quantity of training data that was used to train the model.
 
 ### Real-World Implementation:
 Consider a scenario where a developer makes changes to a critical module related to user authentication. 
