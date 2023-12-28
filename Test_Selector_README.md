@@ -12,30 +12,49 @@ There is a need for a smart test selection mechanism that can efficiently choose
 without compromising on the overall test coverage.
 
 ## Strategy for Smart Test Selection:
+![Block_Diagram](https://github.com/Sandara-Git/Defect_Predict/assets/140485221/d271ed12-edb2-4f64-b2e1-7c4ce7993221)
 
-### Code Change Analysis:
-Monitor the version control system for incoming code changes.
-Identify the files or modules affected by the changes.
 
-### Test Criteria:
-Utilize historical test data to determine the tests associated with the modified files.
-Categorize tests based on their relevance to the changed code.
-Consider test impact analysis to identify broader dependencies.
+### Relevant Data:
+Some relevant data that can be collected from Git to identify code changes include:
 
-### Technology Stack/Tools:
-Leverage Git hooks to trigger the test selection process.
-Use static code analysis tools to identify dependencies and affected files.
-Integrate with the existing CI/CD tools such as Jenkins or Travis CI.
+A description of the change, often included in the commit message.
 
-### Criteria for Test Selection:
-Select tests associated directly with the modified files.
-Include tests that cover the impacted modules and their dependencies.
-Prioritize tests that historically find defects in the modified areas.
-Consider parallelization of tests for efficiency.
+The commit number associated with the change.
 
-### Dynamic Test Selection:
-Execute only a subset of tests initially and progressively run more tests based on the initial results.
-Utilize feedback from the initial test runs to inform subsequent test selections.
+The number of files and lines of code changed.
+
+Differences before and after the change (via a function like "git diff").
+
+References to issues or issues related to the change (via Git's issue tagging functionality).
+
+Information about the author of the change, such as their name and email
+The date and time the change was made
+
+### Test case prioritization:
+This technique involves assigning scores to test cases, reflecting their relevance to the introduced code modifications. Several methods can be employed for this purpose:
+
+#### Semantic Similarity Measurement:
+
+Utilize a measure of semantic similarity, such as the cosine of the angle between vectors representing the code change and each test case.
+Assessing the semantic closeness helps quantify the relationship between the code modifications and individual test cases.
+
+#### Distance Measurement:
+
+Implement a distance measure, like the Levenshtein distance, to quantify the dissimilarity between the code change and each test case.
+This method evaluates the proximity or dissimilarity between the code alteration and test case content.
+
+#### Relevance Measure Based on Specific Terms:
+
+Introduce a relevance measure considering specific terms, such as counting the number of common keywords between the code change and each test case.
+
+Focusing on shared keywords helps capture the thematic alignment between the code modification and individual test cases.
+Once relevance scores are assigned to each test case using one or a combination of these techniques, the next step is ordering the test cases based on their scores. The prioritization is established by presenting the highest-scoring test cases first, followed by those with lower scores. This systematic ordering ensures that test cases are prioritized according to their perceived connection with the code change, facilitating a more efficient testing strategy.
+
+### Accessing test case repository
+To access existing test cases written in Gherkin, the model could use a file read interface. This interface could be developed to allow the model to access and read the Gherkin files in the test case repository.
+
+The interface could be developed using a programming language such as Python and could be integrated with the language model via an API. The interface could take as input the path of the Gherkin file and return the c
 
 ### Real-World Implementation:
 Consider a scenario where a developer makes changes to a critical module related to user authentication. 
